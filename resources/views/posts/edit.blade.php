@@ -1,7 +1,7 @@
 @extends('layouts/app')
 
 @section('content')
-<h1>Create Post</h1>
+<h1>Update Post</h1>
 
     {!! Form::open(['action' => ['PostsController@update',$post->id],'method' => 'POST']) !!}
     
@@ -13,8 +13,8 @@
             {{Form::label('body', 'Body')}}
             {{Form::textarea('body', $post->body, ['class' => 'form-control','placeholder' => 'Body Text'])}}
         </div>
-        {{Form::hidden('_method','PUT')}}
+        {{Form::hidden('_method', 'PUT')}}
         {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
     {!! Form::close() !!}
-   {{$post->id}}
+   
 @endsection
