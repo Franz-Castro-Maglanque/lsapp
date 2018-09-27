@@ -32,3 +32,7 @@ Route::get('/test','PostsController@testing');
 
 
 
+
+Auth::routes();
+
+Route::get('/dashboard', 'DashboardController@index');
