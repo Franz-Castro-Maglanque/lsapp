@@ -16,7 +16,7 @@ class PostsController extends Controller
     public function index()
     {
         $posts = Post::all();
-        // $posts = Post::orderBy('id')->paginate(1);
+        // $posts = Post::orderBy('id');
         //  return $posts = Post::where('id',2)->get();
         // $posts = DB::select("SELECT * FROM posts");
         return view('posts/index')->with('posts', $posts);
@@ -67,7 +67,6 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        //
        $post =  Post::find($id);
        return view('posts/show')->with('post',$post);
     }
@@ -80,7 +79,7 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        $post = Post::find($id);
+        $post =  Post::find($id);
         return view('posts/edit')->with('post',$post);
     }
 
@@ -97,14 +96,13 @@ class PostsController extends Controller
             'title' => 'required',
             'body' => 'required'
         ]);
-        
-        // Create Post
+
         $post = Post::find($id);
         $post->title = $request->input('title');
         $post->body = $request->input('body');
         $post->save();
-        
-        return redirect('/post')->with('success','Post Updated!!');
+
+        return redirect('http://localhost/lsapp/public/post')->with('success','Post Updated');
     }
 
     /**
@@ -117,6 +115,11 @@ class PostsController extends Controller
     {
         $post = Post::find($id);
         $post->delete();
-        return redirect('/post')->with('success','Post Removed');
+        return redirect('http://localhost/lsapp/public/post')->with('success', 'Post Removed!!');
+    }
+
+    public function testing(){
+        $post = Post::find(1);
+        return $post;
     }
 }
