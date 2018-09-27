@@ -15,7 +15,13 @@
           <li class="nav-item">
             <a class="nav-link" href="/lsapp/public/services">Services</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/lsapp/public/post">Blog</a>
+          </li>
         </ul>
-      
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/lsapp/public/post/create">Create Post</a></li>
+        </ul>
+
       </div>
     </nav>
