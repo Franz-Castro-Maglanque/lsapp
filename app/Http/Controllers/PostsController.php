@@ -16,7 +16,15 @@ class PostsController extends Controller
     public function index()
     {
         $posts = Post::all();
+<<<<<<< HEAD
         // $posts = Post::orderBy('id');
+=======
+<<<<<<< HEAD
+        // $posts = Post::orderBy('id')->paginate(1);
+=======
+        // $posts = Post::orderBy('id');
+>>>>>>> 1508acf5c8e0ba9bd57e33322ef9f6191bcda6dd
+>>>>>>> parent of 59046c9... Revert "update"
         //  return $posts = Post::where('id',2)->get();
         // $posts = DB::select("SELECT * FROM posts");
         return view('posts/index')->with('posts', $posts);
@@ -79,7 +87,15 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
+<<<<<<< HEAD
         $post =  Post::find($id);
+=======
+<<<<<<< HEAD
+        $post = Post::find($id);
+=======
+        $post =  Post::find($id);
+>>>>>>> 1508acf5c8e0ba9bd57e33322ef9f6191bcda6dd
+>>>>>>> parent of 59046c9... Revert "update"
         return view('posts/edit')->with('post',$post);
     }
 
@@ -96,13 +112,32 @@ class PostsController extends Controller
             'title' => 'required',
             'body' => 'required'
         ]);
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+        
+        // Create Post
+=======
+
+>>>>>>> 1508acf5c8e0ba9bd57e33322ef9f6191bcda6dd
+>>>>>>> parent of 59046c9... Revert "update"
         $post = Post::find($id);
         $post->title = $request->input('title');
         $post->body = $request->input('body');
         $post->save();
+<<<<<<< HEAD
 
         return redirect('http://localhost/lsapp/public/post')->with('success','Post Updated');
+=======
+<<<<<<< HEAD
+        
+        return redirect('/post')->with('success','Post Updated!!');
+=======
+
+        return redirect('http://localhost/lsapp/public/post')->with('success','Post Updated');
+>>>>>>> 1508acf5c8e0ba9bd57e33322ef9f6191bcda6dd
+>>>>>>> parent of 59046c9... Revert "update"
     }
 
     /**
@@ -115,11 +150,21 @@ class PostsController extends Controller
     {
         $post = Post::find($id);
         $post->delete();
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        return redirect('/post')->with('success','Post Removed');
+=======
+>>>>>>> parent of 59046c9... Revert "update"
         return redirect('http://localhost/lsapp/public/post')->with('success', 'Post Removed!!');
     }
 
     public function testing(){
         $post = Post::find(1);
         return $post;
+<<<<<<< HEAD
+=======
+>>>>>>> 1508acf5c8e0ba9bd57e33322ef9f6191bcda6dd
+>>>>>>> parent of 59046c9... Revert "update"
     }
 }

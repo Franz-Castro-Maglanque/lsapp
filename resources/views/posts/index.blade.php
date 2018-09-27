@@ -9,7 +9,14 @@
          <small>Written On {{$post->created_at}}</small>
         </div>
         @endforeach
+<<<<<<< HEAD
     
+=======
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 1508acf5c8e0ba9bd57e33322ef9f6191bcda6dd
+>>>>>>> parent of 59046c9... Revert "update"
     @else
         <p>No Posts Found</p>
     @endif
