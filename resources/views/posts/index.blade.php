@@ -9,6 +9,10 @@
          <small>Written On {{$post->created_at}}</small>
         </div>
         @endforeach
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 1508acf5c8e0ba9bd57e33322ef9f6191bcda6dd
     @else
         <p>No Posts Found</p>
     @endif
